@@ -14,18 +14,18 @@
     <link rel="stylesheet" type="image/png" href="img/favicon.png" />
 
     <title>Rezerwacja sal konferencyjnych</title>
+
     <?php
-    require_once("db.php");
-    require_once("class/class.Klient.php");
-    require_once("class/class.Rezerwacja.php");
-    
-    $host = "localhost";
-    $login = "root";
-    $password = "";
-    $nameDB = "reservationofrooms";
+      require_once("db.php");
+      require_once("class/class.Klient.php");
+      require_once("class/class.Rezerwacja.php");
+      
+      $host = "localhost";
+      $login = "root";
+      $password = "";
+      $nameDB = "reservationofrooms";
 
-    $db = new db($host, $login, $password, $nameDB);
-
+      $db = new db($host, $login, $password, $nameDB);
     ?>
   </head>
   <body>
@@ -49,29 +49,16 @@
     </form>
 
     <?php
-
-            
-
-            if(isset($_POST['firstname']) && isset($_POST['surname']) && isset($_POST['date']) && isset($_POST['time_start']) && isset($_POST['time_stop']))
-            {
-                if(!empty($_POST['firstname']) && !empty($_POST['surname']) && !empty($_POST['date']) && !empty($_POST['time_start']) && !empty($_POST['time_stop']))
-                {   
-                    $newClient = new Client($_POST['firstname'], $_POST['surname']);
-                    $newReservation = new Reservation($_POST['date'], $_POST['time_start'], $_POST['time_stop']);
-                    $newReservation->saveToBaseReservation($db, $newReservation);
-                    $newClient->saveToBaseClient($db);
-                    //echo $newReservation->getReservationDate()."<br/>";
-
-                    
-                    //date('h-i-s');
-                    //DateTime($newReservation->getRezerwacjaData());
-                    //echo $newReservation->getReservationDate()."<br/>";
-                    //echo $newReservation->getReservationTime_start()."<br/>";
-                    //echo $newReservation->getReservationTime_stop()."<br/>";
-                    
-                }
-            }
-        ?>
-
+      if(isset($_POST['firstname']) && isset($_POST['surname']) && isset($_POST['date']) && isset($_POST['time_start']) && isset($_POST['time_stop']))
+      {
+          if(!empty($_POST['firstname']) && !empty($_POST['surname']) && !empty($_POST['date']) && !empty($_POST['time_start']) && !empty($_POST['time_stop']))
+          {   
+              $newClient = new Client($_POST['firstname'], $_POST['surname']);
+              $newReservation = new Reservation($_POST['date'], $_POST['time_start'], $_POST['time_stop']);
+              $newReservation->saveToBaseReservation($db, $newReservation);
+              $newClient->saveToBaseClient($db);                 
+          }
+      }
+    ?>
   </body>
 </html>

@@ -66,7 +66,6 @@
                     $time_stop_db = new DateTime($valueArray['time_stop']);
                     $time_open = new DateTime('08:00:00');
                     $time_close = new DateTime('20:00:00');
-                    echo "<br/>Sprawdzenie czy termin dostepny<br/>";
                     if($time_start_new > $time_stop_new)
                     {
                         echo "Zły przedział czasowy <br/>";
