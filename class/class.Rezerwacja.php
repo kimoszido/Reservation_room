@@ -106,12 +106,14 @@
             }
         }
 
-        function isThatDateWorkingDay($date) {
+        function isThatDateWorkingDay($date) 
+        {
             $time = strtotime($date);
             $dayOfWeek = (int)date('w',$time);
             $year = (int)date('Y',$time);
          
-            if($dayOfWeek==0 ) {
+            if($dayOfWeek==0 ) 
+            {
                 return false;
             }
          
