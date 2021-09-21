@@ -38,7 +38,7 @@
                 $time_stop_new = new DateTime($this->time_stop);
                 $time_stop_new->add(new DateInterval('PT1H'));
                 //$time_stop_new->format('H:i:s');
-                print_r($time_stop_new);
+                //print_r($time_stop_new);
                 $db->query("INSERT INTO reservations (dateOfReservation, time_start, time_stop) 
                     VALUE (?, ?, ?);"
                     , $this->dateOfReservation, $this->time_start, date_format($time_stop_new, 'H:i:s'));
@@ -47,7 +47,7 @@
         public function checkFreeTerm ($db, $reservation)
         {
             $dateOfReservation = new DateTime($this->dateOfReservation);
-            if($reservation->isThatDateWorkingDay(date_format($dateOfReservation, 'Y-m-d')))
+            if(!$reservation->isThatDateWorkingDay(date_format($dateOfReservation, 'Y-m-d')))
             {
                 echo "W ten dzień mamy zamknięte <br/>";
                 return false;
