@@ -71,19 +71,33 @@
         grid-column: 1 / -1;
         display: grid;
         grid-template-columns: max-content 1fr;
-        grid-column-gap: 10px; }
+        grid-column-gap: 10px;
+        position: relative; }
       .main__right .contact__checkbox {
         display: none; }
+      .main__right .contact__checkbox:checked ~ .main__right .contact__checkbox-label .main__right .contact__checkbox-icon {
+        opacity: 1; }
       .main__right .contact__chckbox-icon {
         width: 15px;
         height: 15px;
+        position: absolute;
         border-radius: 3px;
         background-color: white;
         border: 2px solid lightgray;
         box-sizing: border-box;
         grid-column: 1 / 2; }
+        .main__right .contact__chckbox-icon::after {
+          content: "";
+          width: 5px;
+          height: 5px;
+          position: absolute;
+          background-color: black;
+          border-radius: 50%;
+          opacity: 0;
+          transition: all .2s; }
       .main__right .contact__checkbox-text {
-        grid-column: 2 / 3; }
+        grid-column: 2 / 3;
+        padding-left: 25px; }
       .main__right .contact__submit-box {
         grid-column: 1 / -1;
         display: grid;

@@ -136,25 +136,46 @@
                 display: grid;
                 grid-template-columns: max-content 1fr;    
                 grid-column-gap: 10px;
+
+                position: relative;
             }
 
             &__checkbox{
                 display: none;
-            }    
+            } 
+            
+            &__checkbox:checked ~ &__checkbox-label &__checkbox-icon{
+                opacity: 1;
+            }
 
             &__chckbox-icon{
                 width: 15px;
                 height: 15px;
+                position: absolute;
                 border-radius: 3px;
                 background-color: white;
                 border: 2px solid lightgray;
                 box-sizing: border-box;
                 
                 grid-column: 1 / 2;
+
+                &::after{
+                    content: "";
+                    width: 5px;
+                    height: 5px;
+                    position: absolute;
+                    background-color: black;
+                    border-radius: 50%;
+                    opacity: 0;
+                    transition: all .2s;
+                }
+
+                
             }
 
             &__checkbox-text{
                 grid-column: 2 / 3;
+                padding-left: 25px;
             }
 
             &__submit-box{
