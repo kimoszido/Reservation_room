@@ -29,7 +29,7 @@
     ?>
   </head>
   <body>
-      <h2 class="h2">Formularz Rezerwacyjny</h2>
+      <h2 class="h2">Formularz Rezerwacyjny Sali Konferencyjnej</h2>
     <form action="index.php" method="POST" class="form">
         <input type="text" class="text" name="firstname" placeholder="Imię" >
         <label for="firstname" class="text_label" >Imię</label>
