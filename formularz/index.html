@@ -9,7 +9,8 @@
       rel="stylesheet"
       href=""
     />
-    <!--<link rel="stylesheet" href="css/icon-font.css">-->
+    <link rel="stylesheet" href="fonts/ParaType-FuturaPTBold.ttf">
+    <link rel="stylesheet" href="fonts/Lato-Regular.ttf">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" type="image/png" href="img/favicon.png" />
 
@@ -18,27 +19,44 @@
   </head>
   <body>
     <div class = "main">
-               <h1 class="first_heading">DZIAŁ MARKETINGU</h2> 
-               <p class="text" >Sprawdź najnowsze trendy w branży oświetleniowej.</p>
-               <h2 class="second_heading" id="ddd">DANE KONTAKTOWE</h2>
-               <p class="text">
-                   <span>Kom:</span> +48 698 642 853<br>
-                   <span>Tel:</span> +48 61 872 75 03                                    
+        <div class="main__left">
+            <div class="tittle">
+                <h1 class="tittle__first-heading">DZIAŁ MARKETINGU</h1> 
+                <p class="tittle__text text" >Sprawdź najnowsze trendy w branży oświetleniowej.</p>
+            </div>
+            <div class="contact-details">
+                <h2 class="contact-details__second-heading second-heading" id="ddd">DANE KONTAKTOWE</h2>
+                <p class="contact-details__text text">
+                    <span>Kom:</span> +48 698 642 853<br>
+                    <span>Tel:</span> +48 61 872 75 03                                    
                 </p>
-                <h2 class="second_heading">GODZINY</h2>
-                <p class="text">Poniedziałek - Piątek 8.00 - 16.00</p>           
+            </div>
+            <div class="time">
+                <h2 class="time__second-heading second-heading">GODZINY</h2>
+                <p class="time__text text">Poniedziałek - Piątek 8.00 - 16.00</p>     
+            </div>
+        </div>
+        <div class="main__right">      
             <form method ="POST" class="contact">
-                <h2 class="second_heading">FORMULARZ KONTAKTOWY</h2> 
-                <input type="text" class="contact__name" value="Imię i nazwisko*" onclick="this.value=''">    
-                <input type="email" class="contact__email" value="Adres e-mail*" onclick="this.value=''">
-                <input type="number" class="contatc__number" placeholder="Telefon" onclick="this.value=''" maxlenght="9" minlenght="9">
-                <textarea class="contact__text" placeholder="Wiadomość" onclick="this.value=''"></textarea>
-                <input type="checkbox" class="contact__checkbox" name="agree">
-                <label for="zgree">Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze mnie adres e-mail 
-                    informacji dotyczących świadczonych przez Administratora. Zgoda może być cofnięta w każdym czasie. 
-                    Polityka prywatności.</label>
-                <input type="submit" class="contact__submit" value="Wyślij">
-                <p class="star">*pola wymagane</p>
+                <h2 class="contact__form-heading second-heading">FORMULARZ KONTAKTOWY</h2> 
+                <input type="text" class="contact__name" placeholder="Imię i nazwisko*" onclick="this.placeholder=''">    
+                <div class="contact__nr-email">
+                    <input type="email" class="contact__email" placeholder="Adres e-mail*" onclick="this.placeholder=''">
+                    <input type="number" class="contact__number" placeholder="Telefon" onclick="this.placeholder=''" maxlenght="9" minlenght="9">
+                </div>
+                <textarea class="contact__text" placeholder="Wiadomość" onclick="this.placeholder=''"></textarea>
+                <div class="contact__checkbox-box">
+                    <input type="checkbox" class="contact__checkbox" name="agree">
+                    <label for="agree"><span class="contact__chckbox-icon">&nbsp;</span></label>
+                    <p class="contact__checkbox-text text">Wyrażam zgodę na otrzymywanie drogą elektroniczną na wskazany przeze mnie adres e-mail 
+                        informacji dotyczących świadczonych przez Administratora. Zgoda może być cofnięta w każdym czasie. 
+                        Polityka prywatności.</p>
+                </div>
+                <div class="contact__submit-box">
+                    <p class="contact__star">*pola wymagane</p>
+                    <input type="submit" class="contact__submit" value="Wyślij">
+                </div>
             </form>
+        </div>
     </div>
   </body>
