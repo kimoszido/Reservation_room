@@ -20,6 +20,8 @@
     color: #22262C;
 }
 
+
+
 .main{
     padding: 40px;
     background-color: #f0f0f0;
@@ -84,7 +86,7 @@
 
     &__right{
 
-        grid-column: 5 / -1;
+        grid-column: 5 / -1;}
         
 
         
@@ -147,15 +149,16 @@
                 position: relative;
             }
 
-            &__checkbox{
-                display: none;
-            } 
-            
-            &__checkbox:checked ~ &__checkbox-label &__checkbox-icon::after{
-                opacity: 1;
+            &__checkbox-label{
+                position: relative;
+                cursor: pointer;
             }
 
-            &__chckbox-icon{
+            &__checkbox{
+               display: none;
+            } 
+
+            &__checkbox-icon{
                 left: 0px;
                 top: 2px;
                 width: 18px;
@@ -163,26 +166,33 @@
                 position: absolute;
                 border-radius: 3px;
                 background-color: white;
-                //border: 2px solid lightgray;
                 box-sizing: border-box;
-                cursor: pointer;
+                //z-index: 1;
+                
                 grid-column: 1 / 2;
 
                 &::after{
                     content: "";
-                    width: 5px;
-                    height: 5px;
+                    width: 8px;
+                    height: 8px;
                     position: absolute;
                     background-color: black;
-                    border-radius: 50%;
+                    //border-radius: 50%;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
                     opacity: 0;
                     transition: all .2s;
-                }
+                    //z-index: 10;
+                }               
+            }
 
-                
+            &__checkbox:checked ~ .contact__checkbox-label .contact__checkbox-icon::after{
+                opacity: 1;
+            }
+
+            &__checkbox:checked ~ &__checkbox-label{
+                background-color: red;
             }
 
             &__checkbox-text{
@@ -214,4 +224,4 @@
             }
         }
     }
-}
+
