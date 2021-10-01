@@ -1,14 +1,18 @@
 @font-face {
     font-family: Lato Regular;
-    src:  url(fonts/Lato-Regular.woff)  format('woff');
+    src:  url(../fonts/Lato-Regular.woff)  format('woff'),
+    url(../fonts/Lato-Regular.woff2)  format('woff2');}
 
+@font-face {
     font-family: Lato Bold;
-    src:  url(fonts/Lato-LBold.woff)  format('woff');
+    src:  url(../fonts/Lato-LBold.woff)  format('woff'),
+    url(../fonts/Lato-LBold.woff)  format('woff2');}
 
+@font-face {
     font-family: Futura PT Bold;
-    src:  url(fonts/ParaType-FuturaPTBold.woff) format('woff'),
-    url(fonts/ParaType-FuturaPTBold.woff2) format('woff2')
-}
+    src:  url(../fonts/ParaType-FuturaPTBold.woff) format('woff'),
+    url(../fonts/ParaType-FuturaPTBold.woff2) format('woff2');}
+
 
 *{
     margin: 0;
@@ -55,7 +59,9 @@
             }
 
             &__text{
-                
+                span{
+                    font-family: Lato Bold;
+                }
             }
 
         }
@@ -70,7 +76,7 @@
             }
 
             &__text{
-            
+                
             }
 
         }
@@ -128,6 +134,7 @@
                 border-radius: 3px;
                 grid-column: 1 / -1;
                 padding: 15px 20px;
+                font-family: Lato Regular;
             }
 
             &__checkbox-box{
@@ -144,7 +151,7 @@
                 display: none;
             } 
             
-            &__checkbox:checked ~ &__checkbox-label &__checkbox-icon{
+            &__checkbox:checked ~ &__checkbox-label &__checkbox-icon:checked{
                 opacity: 1;
             }
 
@@ -153,8 +160,8 @@
                 height: 15px;
                 position: absolute;
                 border-radius: 3px;
-                background-color: white;
-                border: 2px solid lightgray;
+                background-color: lightgray;
+                //border: 2px solid lightgray;
                 box-sizing: border-box;
                 
                 grid-column: 1 / 2;
@@ -176,6 +183,7 @@
             &__checkbox-text{
                 grid-column: 2 / 3;
                 padding-left: 25px;
+                font-size: 14px;
             }
 
             &__submit-box{
